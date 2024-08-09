@@ -15,7 +15,20 @@ class OnBoard1 extends StatefulWidget {
 }
 
 class _OnBoard1State extends State<OnBoard1> {
+  bool _isLogin = true;
+
   @override
+  void initState() {
+    super.initState();
+  }
+
+  //switch state
+  void _toggleView() {
+    setState(() {
+      _isLogin = !_isLogin; // Переключаем состояние
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutBuilder(

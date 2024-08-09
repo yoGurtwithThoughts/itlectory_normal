@@ -4,13 +4,12 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 
-//this code is creating local db
 class DatabaseHelper {
-  static final _databaseName = "user.db";
-  static final _databaseVersion = 1;
-  static final table = 'user_studends';
-  static final columnId = 'id';
-  static final columnUsername = 'name';
+  static const _databaseName = "user.db";
+  static const _databaseVersion = 1;
+  static const table = 'user_studends';
+  static const columnId = 'id';
+  static const columnUsername = 'username';
 
   DatabaseHelper._privateConstructor();
   static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
@@ -33,19 +32,31 @@ class DatabaseHelper {
     await db.execute('''
               CREATE TABLE $table (
                 $columnId INTEGER PRIMARY KEY,
-                 $columnUsername TEXT NOT NULL UNIQUE
-               )
+                $columnUsername TEXT
+              )
               ''');
+    await db.insert(table, {
+      columnUsername: 'user1',
+    });
+    await db.insert(table, {
+      columnUsername: 'user2',
+    });
+    print('Database created and users inserted'); // Debugging line
   }
-//insert data on db
 
   Future<int> insertUser(String username) async {
     Database db = await database;
     Map<String, dynamic> row = {
       columnUsername: username,
-
     };
     return await db.insert(table, row);
+  }
+
+  Future<List<Map<String, dynamic>>> getAllUsers() async {
+    Database db = await database;
+    List<Map<String, dynamic>> results = await db.query(table);
+    print('All users: $results'); // Debugging line
+    return results;
   }
 
   Future<bool> checkUser(String username) async {
@@ -55,6 +66,7 @@ class DatabaseHelper {
       where: '$columnUsername = ?',
       whereArgs: [username],
     );
-    return results.isNotEmpty; //when user it is found
+    print('User check for $username: $results'); // Debugging line
+    return results.isNotEmpty; // when user is found
   }
 }

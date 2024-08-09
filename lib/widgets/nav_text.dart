@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:it_lectory_copy_2/widgets/authrise_switch_widget.dart';
 
+
 class NavText extends StatefulWidget {
   const NavText({super.key});
 
@@ -15,7 +16,7 @@ class _NavTextState extends State<NavText> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SignUpWidget()),
+            MaterialPageRoute(builder: (context) =>  SignUpWidget()),
           );
   },
   child: Text('У  МЕНЯ  УЖЕ  ЕСТЬ  АККАУНТ', 
@@ -27,3 +28,5 @@ class _NavTextState extends State<NavText> {
     );
   }
 }
+
+

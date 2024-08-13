@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_copy_2/pages/onboard_1.dart';
-import 'package:it_lectory_copy_2/pages/splashcreen.dart';
-import 'package:it_lectory_copy_2/widgets/authrise_switch_widget.dart';
+import 'package:it_lectory_copy_2/widgets/splash.dart';
 
 void main() {
   runApp(const MyApp());

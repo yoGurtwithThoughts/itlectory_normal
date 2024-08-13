@@ -22,17 +22,12 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
     super.initState();
-    _loadusersDB();
+
     _register();
   }
 
 
-  Future <void> _loadusersDB() async{
-    List<Map<String, dynamic>> dbUsers = await DatabaseHelper.instance.getAllUsers();
-    setState(() {
-      database = dbUsers;
-    });
-  }
+
 //register nev users
   void _register() async {
     if (_formKey.currentState?.validate() ?? false) {
@@ -101,7 +96,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             Center(
               child: Column(
                 children: [
-                  SizedBox(height: 650),
+                  SizedBox(height: 550),
                   Container(
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(0, 154, 222, 1),

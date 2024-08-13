@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:it_lectory_copy_2/pages/page_register.dart';
+import 'package:it_lectory_copy_2/widgets/authrise_switch_widget.dart';
 import 'package:it_lectory_copy_2/widgets/dinamic_Text.dart';
 import 'package:it_lectory_copy_2/widgets/main_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:it_lectory_copy_2/widgets/nav_text.dart';
-
 import '../widgets/animatedBilder.dart';
 import '../widgets/hot_navigation_button.dart';
+import 'package:shake/shake.dart';
 
 
 class OnBoard1 extends StatefulWidget {
@@ -15,18 +18,34 @@ class OnBoard1 extends StatefulWidget {
 }
 
 class _OnBoard1State extends State<OnBoard1> {
-  bool _isLogin = true;
+  ShakeDetector? _shakeDetector;
 
   @override
   void initState() {
     super.initState();
+    _startListening();
   }
 
-  //switch state
-  void _toggleView() {
-    setState(() {
-      _isLogin = !_isLogin; // Переключаем состояние
-    });
+  void _startListening() {
+    _shakeDetector = ShakeDetector.autoStart(
+      onPhoneShake: () {
+        _navigateToNextPage();
+      },
+    );
+  }
+
+  void _navigateToNextPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => RegisterPage(),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _shakeDetector?.stopListening();
+    super.dispose();
   }
 
   Widget build(BuildContext context) {
@@ -35,8 +54,8 @@ class _OnBoard1State extends State<OnBoard1> {
         builder: (context, constraints) {
           return Stack(
             children: [
-              Padding(padding: EdgeInsets.only(left: 335, top: 35),
-              child: HotButtonMenu(),),
+              Padding(padding: EdgeInsets.only(left: 295, top: 25),
+                child: HotButtonMenu(),),
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -58,15 +77,15 @@ class _OnBoard1State extends State<OnBoard1> {
                 ),
               ),
               Positioned(
-                bottom: 50, 
+                bottom: 25,
                 left: 0,
                 right: 0,
                 child: Column(
                   children: [
                     DynamicTextByTime(),
-                    const SizedBox(height:235,),
+                    const SizedBox(height: 150,),
                     MainButtonWidget(),
-                 SizedBox(height: 15,),
+                    SizedBox(height: 15,),
                     NavText(),
                   ],
                 ),
@@ -78,3 +97,4 @@ class _OnBoard1State extends State<OnBoard1> {
     );
   }
 }
+

@@ -1,46 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:it_lectory_3/core/data_user.dart';
-import 'package:it_lectory_3/core/databbase_helper.dart';
 import 'package:it_lectory_3/pages/home_page.dart';
 import 'package:it_lectory_3/widgets/all_button.dart';
 import 'package:it_lectory_3/widgets/style_text.dart';
-
-
-class LoginWidget extends StatefulWidget {
-  LoginWidget({super.key});
-
+class SignUpWidget extends StatefulWidget {
   @override
-  State<LoginWidget> createState() => _LoginWidgetState();
+  _SignUpWidgetState createState() => _SignUpWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
-  final _recordBook = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
-  List<Map<String, dynamic>> database = [];
-
-  @override
-  void initState() {
-    super.initState();
-
-    _register();
-  }
+class _SignUpWidgetState extends State<SignUpWidget> {
+  final _recordBook1 = TextEditingController();
 
 
+  void _login() {
+    final String inputV = _recordBook1.text;
 
-//register nev users
-  void _register() async {
-    if (_formKey.currentState?.validate() ?? false) {
-      String name = _recordBook.text;
-      int id = await DatabaseHelper.instance.insertUser(name);
+    if (inputV == rcbook) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
       );
-      _recordBook.clear();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Invalid input value')),
+      );
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,15 +38,15 @@ class _LoginWidgetState extends State<LoginWidget> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Регистрация', style: TextStylesMain.title),
+                  Text('Авторизация', style: TextStylesMain.title),
                   SizedBox(height: 20),
                   Form(
-                    key: _formKey,
+
                     child: SizedBox(
                       height: 50,
                       width: 355,
                       child: TextFormField(
-                        controller: _recordBook,
+                        controller: _recordBook1,
                         style: TextStylesMain.labeltxt,
                         decoration: InputDecoration(
                           labelStyle: TextStylesMain.labeltxt,
@@ -82,7 +67,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         validator: (value) {
-                          if (value == null || value.isEmpty) { // Проверка на null
+                          if (value == null ||
+                              value.isEmpty) { // Проверка на null
                             return 'Please enter your number of record book';
                           }
                           return null;
@@ -96,7 +82,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             Center(
               child: Column(
                 children: [
-                  SizedBox(height: 550),
+                  SizedBox(height: 650),
                   Container(
                     decoration: BoxDecoration(
                       color: Color.fromRGBO(0, 154, 222, 1),
@@ -105,8 +91,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                     height: 45,
                     width: 256,
                     child: AllButton(
-                      onPressed: _register,
-                      buttonText: 'Зарегистрироваться',
+                      onPressed: _login,
+                      buttonText: 'Войти',
                     ),
                   ),
                 ],
@@ -118,10 +104,3 @@ class _LoginWidgetState extends State<LoginWidget> {
     );
   }
 }
-
-
-
-
-
-
-

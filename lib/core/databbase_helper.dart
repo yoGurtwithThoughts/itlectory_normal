@@ -10,8 +10,11 @@ class DatabaseHelper {
   static final table = 'users';
   static final columnId = 'id';
   static final columnUsername = 'username';
+  static final columnPassword = 'userpas';
+  static final columnUserLog = 'userlog';
 
   DatabaseHelper._privateConstructor();
+
   static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
 
   static Database? _database;
@@ -33,7 +36,9 @@ class DatabaseHelper {
     await db.execute('''
               CREATE TABLE $table (
                 $columnId INTEGER PRIMARY KEY,
-                $columnUsername TEXT
+                $columnUsername TEXT,
+                $columnPassword TEXT,
+                $columnUserLog TEXT
                 )
               ''');
   }
@@ -42,6 +47,16 @@ class DatabaseHelper {
     Database db = await database;
     Map<String, dynamic> row = {
       columnUsername: username,
+
+    };
+    return await db.insert(table, row);
+  }
+
+  Future<int> insertUser1(String userpas, String userlog) async {
+    Database db = await database;
+    Map<String, dynamic> row = {
+      columnUserLog: userlog,
+      columnPassword: userpas,
 
     };
     return await db.insert(table, row);

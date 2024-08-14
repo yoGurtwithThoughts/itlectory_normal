@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:it_lectory_3/pages/home_teachers.dart';
+import 'package:it_lectory_3/pages/onboard_1.dart';
+import 'package:it_lectory_3/pages/page_register.dart';
 import 'package:it_lectory_3/widgets/animated_error.dart';
+import 'package:it_lectory_3/widgets/authrise_switch_widget.dart';
 import 'package:it_lectory_3/widgets/splash.dart';
 
 
@@ -19,6 +23,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (context)=> SplashScreen(),
         '/er': (context) => PulsatingError(),
+        '/th' : (context)=> THome(),
+        '/onb1': (context)=> OnBoard1(),
+        '/sg' : (context) => SignUpWidget(),
+        '/pagt' : (context) => RegisterPage(),
+        '/logs' :(context) => LoginWidget(),
 
       },
       theme: ThemeData(

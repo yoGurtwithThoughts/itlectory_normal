@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_3/core/lection_theme_data.dart';
 import 'package:it_lectory_3/pages/chats_page.dart';
-import 'package:it_lectory_3/pages/exit_method.dart';
 import 'package:it_lectory_3/pages/profile_page.dart';
 import 'package:it_lectory_3/pages/students.dart';
-import 'package:it_lectory_3/widgets/appbar_widget.dart';
-import 'package:it_lectory_3/widgets/bottom_bar_view.dart';
+import 'package:it_lectory_3/pages/students/bottom_for_students.dart';
 import 'package:it_lectory_3/widgets/btb_logik.dart';
-import 'package:it_lectory_3/widgets/list_theme_widget.dart';
-import 'package:it_lectory_3/widgets/title_widget.dart';
 
-import '../widgets/btb_logik.dart';
+class Btlogick extends StatefulWidget {
+  const Btlogick({super.key});
 
-class THome extends StatefulWidget {
   @override
-  _THomeState createState() => _THomeState();
+  State<Btlogick> createState() => _BtlogickState();
 }
 
-class _THomeState extends State<THome> {
+class _BtlogickState extends State<Btlogick> {
   int selectedIndex = 0;
-  String _selectedItem = StartWPF[0];
-
   static  List<Widget> _widgetOptions = <Widget>[
     THomeContent(),
     ChatPage(),
@@ -38,7 +31,7 @@ class _THomeState extends State<THome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _widgetOptions.elementAt(selectedIndex),
-      bottomNavigationBar: BottomBarr(
+      bottomNavigationBar: BottomBarrs(
         selectedIndex: selectedIndex,
         onItemTapped: _onItemTapped,
       ),

@@ -4,14 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ListWidget extends StatelessWidget {
   final String namel;
-  final String selectitem;
   final List<String> items;
   final Function(String) onItemSelected;
 
   const ListWidget({
     super.key,
     required this.namel,
-    required this.selectitem,
     required this.items,
     required this.onItemSelected,
   });
@@ -19,54 +17,48 @@ class ListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
-      width: 335,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5),
-        child: Row(
-          children: [
-            SvgPicture.asset(
-              'assets/images/bookclosed.svg',
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(namel, style: TextStylesMain.alltxt),
-            Padding(
-              padding: const EdgeInsets.only(right: 5, left: 125),
-              child: InkWell(
-                child: SvgPicture.asset('assets/images/chevrondown.svg'),
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        content: DropdownButton<String>(
-                          value: selectitem,
-                          onChanged: (String? newValue) {
-                            Navigator.of(context).pop();
-                            onItemSelected(newValue!);
-                          },
-                          items: items.map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+      width: 350,
       decoration: BoxDecoration(
         color: Color.fromRGBO(53, 51, 51, 1),
         borderRadius: BorderRadius.circular(15),
       ),
+      child: ExpansionTile(
+          title: Row(
+            children: [
+              SvgPicture.asset(
+                'assets/images/bookclosed.svg',
+                height: 35,
+              ),
+              SizedBox(width: 5),
+              Expanded(
+                child: Text(namel, style: TextStylesMain.alltxt),
+              ),
+            ],
+          ),
+          trailing: SvgPicture.asset(
+            'assets/images/chevrondown.svg',
+            height: 20,
+          ),
+          children: items.map((item) {
+            return Container(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(26, 26, 26, 1),
+                borderRadius: BorderRadius.circular(2.5),
+                border: Border(
+                  top: BorderSide(color: Colors.transparent),
+                  bottom: BorderSide(color: Colors.transparent),
+                ),
+              ),
+              child: ListTile(
+                title: Text(item, style: TextStylesMain.alltxt),
+                dense: true,
+                onTap: () {
+                  onItemSelected(item); // Вызов функции при выборе элемента
+                },
+                visualDensity: VisualDensity.compact,
+              ),
+            );
+          }).toList()),
     );
   }
 }

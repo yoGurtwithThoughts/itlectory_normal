@@ -18,4 +18,38 @@ const List<String> Draving = [
   'Элементы',
   'Примеры использования',
 ];
+const List<String> Dravingg = [
+  'Основные понятия',
+  'Элементы',
+  'Примеры использования',
+];
+const List<String> Dravinggg = [
+  'Основные понятия',
+  'Элементы',
+  'Примеры использования',
+];
+const List<String> RMVVM = [
+  'Основные понятия',
+
+];
+const List<String> RMVVMM= [
+  'Паттерн MVVM',
+
+];
+const List<String> RMVVMMM = [
+  'Команды и взаимодействие с пользователем',
+
+];
+const List<String> WPFV = [
+  'Работа с мультимедиа',
+
+];
+const List<String> WPFVc = [
+  'Документы и печать',
+
+];
+const List<String> WPFVcc = [
+  'Оптимизация и производительность',
+
+];
 

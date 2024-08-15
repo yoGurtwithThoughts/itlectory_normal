@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:it_lectory_3/core/data_user.dart';
 import 'package:it_lectory_3/core/databbase_helper.dart';
-import 'package:it_lectory_3/pages/home_page.dart';
+import 'package:it_lectory_3/pages/students/bt_logik.dart';
+import 'package:it_lectory_3/pages/students/home_page.dart';
 import 'package:it_lectory_3/widgets/all_button.dart';
 import 'package:it_lectory_3/widgets/style_text.dart';
 
@@ -35,7 +36,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       int id = await DatabaseHelper.instance.insertUser(name);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => Btlogick()),
       );
       _recordBook.clear();
     }

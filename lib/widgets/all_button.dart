@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_3/pages/home_page.dart';
+import 'package:it_lectory_3/pages/students/home_page.dart';
 import 'package:it_lectory_3/widgets/style_text.dart';
 
 class AllButton extends StatelessWidget {

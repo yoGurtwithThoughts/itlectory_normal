@@ -5,7 +5,7 @@ import 'package:it_lectory_3/widgets/all_button.dart';
 import 'package:it_lectory_3/widgets/nav_text.dart';
 import 'package:it_lectory_3/widgets/style_text.dart';
 
-import 'home_page.dart';
+import 'students/home_page.dart';
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 

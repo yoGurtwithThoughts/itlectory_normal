@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_3/pages/home_teachers.dart';
-import 'package:it_lectory_3/widgets/authrise_switch_widget.dart';
 
 
-class NavText extends StatefulWidget {
-  const NavText({super.key});
+class NavText extends StatelessWidget {
+  final void Function()? onTap;
 
-  @override
-  State<NavText> createState() => _NavTextState();
-}
+  NavText({super.key,
+    required this.onTap});
 
-class _NavTextState extends State<NavText> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        final currentRoute = ModalRoute.of(context)?.settings.name;
-        if (currentRoute == '/pagt') {
-          Navigator.pushNamed(context, '/th');
-        } else if (currentRoute == '/onb1') {
-          Navigator.pushNamed(context, '/sg');
-        }
-      },
+      onTap: onTap,
       child: Text(
         'У  МЕНЯ  УЖЕ  ЕСТЬ  АККАУНТ',
         style: TextStyle(

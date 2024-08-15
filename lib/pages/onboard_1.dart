@@ -88,7 +88,9 @@ class _OnBoard1State extends State<OnBoard1> {
                     const SizedBox(height: 150,),
                     MainButtonWidget(),
                     SizedBox(height: 15,),
-                    NavText(),
+                    NavText(onTap: (){
+                      Navigator.pushNamed(context, '/sg');
+                    },),
                   ],
                 ),
               ),

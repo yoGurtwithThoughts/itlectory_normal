@@ -4,7 +4,9 @@ import 'package:it_lectory_3/pages/onboard_1.dart';
 import 'package:it_lectory_3/pages/page_register.dart';
 import 'package:it_lectory_3/widgets/animated_error.dart';
 import 'package:it_lectory_3/widgets/authrise_switch_widget.dart';
+import 'package:it_lectory_3/widgets/sign_up.dart';
 import 'package:it_lectory_3/widgets/splash.dart';
+import 'package:it_lectory_3/widgets/teacher_signIn.dart';
 
 
 
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/sg' : (context) => SignUpWidget(),
         '/pagt' : (context) => RegisterPage(),
         '/logs' :(context) => LoginWidget(),
+        '/sgt': (context)=> TeacherIn(),
 
       },
       theme: ThemeData(

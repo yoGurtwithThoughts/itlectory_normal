@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/splash' ,
+      initialRoute: '/th' ,
       routes: {
         '/splash': (context)=> SplashScreen(),
         '/er': (context) => PulsatingError(),

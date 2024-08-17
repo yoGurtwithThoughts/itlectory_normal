@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_3/pages/chats_page.dart';
-import 'package:it_lectory_3/pages/home_teachers.dart';
-import 'package:it_lectory_3/pages/profile_page.dart';
-import 'package:it_lectory_3/pages/students.dart';
-import 'package:it_lectory_3/pages/students/chats_st.dart';
+import 'package:it_lectory_3/widgets/chats_page.dart';
 import 'package:it_lectory_3/pages/students/students_profile.dart';
 import 'package:it_lectory_3/pages/students/test_page.dart';
 import 'package:it_lectory_3/widgets/bottom_bar.dart';
@@ -16,7 +12,7 @@ class BottomBarrs extends StatelessWidget {
   BottomBarrs({required this.selectedIndex, required this.onItemTapped});
   static  List<Widget> _widgetOptions = <Widget>[
     THomeContent(),
-    ChatStudents(),
+    ChatPage(),
     StProfile(),
     TestPage(),
   ];

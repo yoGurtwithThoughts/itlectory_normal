@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:it_lectory_3/pages/chats_page.dart';
+import 'package:it_lectory_3/widgets/chats_page.dart';
 import 'package:it_lectory_3/pages/home_teachers.dart';
 import 'package:it_lectory_3/pages/onboard_1.dart';
 import 'package:it_lectory_3/pages/page_register.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:it_lectory_3/core/lection_theme_data.dart';
-import 'package:it_lectory_3/pages/chats_page.dart';
+import 'package:it_lectory_3/widgets/chats_page.dart';
 import 'package:it_lectory_3/pages/exit_method.dart';
 import 'package:it_lectory_3/pages/profile_page.dart';
 import 'package:it_lectory_3/pages/students.dart';

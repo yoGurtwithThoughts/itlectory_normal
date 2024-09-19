@@ -171,7 +171,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
             )
                 : SizedBox.shrink(),
           ),
-          SizedBox(height: 10,)
+          SizedBox(height: 10,),
         ],
       ),
     );

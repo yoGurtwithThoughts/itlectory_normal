@@ -57,7 +57,7 @@ class ChatCardWidget extends StatelessWidget {
                   width: 30,
                   height: 30,
                   decoration: const BoxDecoration(
-                    color: Color.fromARGB(53, 51, 51, 1),
+                    color: Color.fromRGBO(82, 203, 255, 1),
                     borderRadius: BorderRadius.all(
                       Radius.circular(140),
                     ),

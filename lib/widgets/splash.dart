@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:it_lectory_3/pages/home_teachers.dart';
 import 'package:it_lectory_3/pages/onboard_1.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -15,6 +17,24 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _goHome();
+  }
+
+  Future<void> _checkLoginStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+
+    if (isLoggedIn) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => THome()),
+      );
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => OnBoard1()),
+      );
+    }
   }
 
   @override

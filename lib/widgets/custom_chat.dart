@@ -5,12 +5,15 @@ import 'dart:io';
 class CustomMessageWidget extends StatelessWidget {
   final Message message;
 
-  const CustomMessageWidget({Key? key, required this.message}) : super(key: key);
+  const CustomMessageWidget({Key? key, required this.message})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: message.sender == 'student' ? Alignment.centerLeft : Alignment.centerRight,
+      alignment: message.sender == 'student'
+          ? Alignment.centerLeft
+          : Alignment.centerRight,
       child: Container(
         constraints: BoxConstraints(
           maxWidth: 300,
@@ -26,7 +29,8 @@ class CustomMessageWidget extends StatelessWidget {
           children: [
             Text(
               message.sender,
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
             ),
             SizedBox(height: 5),
             Text(
@@ -35,7 +39,9 @@ class CustomMessageWidget extends StatelessWidget {
             ),
             if (message.imageUrl != null) ...[
               SizedBox(height: 5),
-              Image.network(message.imageUrl!, width: 100, height: 100, fit: BoxFit.cover),             ],
+              Image.network(message.imageUrl!,
+                  width: 100, height: 100, fit: BoxFit.cover),
+            ],
             if (message.filePath != null) ...[
               SizedBox(height: 5),
               Text(

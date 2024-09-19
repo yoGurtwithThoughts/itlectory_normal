@@ -117,6 +117,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
           ),
           Row(
             children: [
+              SizedBox(width: 25,),
               Container(
                 height: 55,
                 width: 285,
@@ -170,6 +171,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
             )
                 : SizedBox.shrink(),
           ),
+          SizedBox(height: 10,)
         ],
       ),
     );

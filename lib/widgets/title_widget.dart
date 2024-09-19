@@ -13,7 +13,9 @@ class TitleWidget extends StatelessWidget {
         SvgPicture.asset('assets/images/PlayLabel.svg', height: 25,
         width:25,),
         SizedBox(width: 25,),
-        Text(title, style: TextStylesMain.alltxt,),
+        Text(title, style: TextStylesMain.alltxt,
+            softWrap: true,
+        maxLines: 3,),
 
 
       ],

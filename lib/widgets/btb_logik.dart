@@ -13,14 +13,14 @@ class THomeContent extends StatelessWidget {
         children: [
           SizedBox(height: 35),
           AppBarWidget(
-            text: 'WPF',
+            text: 'Введение в WPF',
             isBack: false,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15, top: 35),
+            padding: const EdgeInsets.only(left: 10, top: 35),
             child: Column(
               children: [
-                TitleWidget(title: 'Введение в WPF'),
+                TitleWidget(title: 'Основы WPF'),
                 SizedBox(height: 25),
                 ListWidget(
                   namel: 'Введение в WPF',
@@ -30,7 +30,7 @@ class THomeContent extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 25),
-                TitleWidget(title: 'Введение в WPF'),
+                TitleWidget(title: 'Язык разметки XAML и контейнеры \nкомпановки', ),
                 SizedBox(height: 15),
                 ListWidget(
                   namel: 'Основы XAML',
@@ -40,7 +40,7 @@ class THomeContent extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 25),
-                TitleWidget(title: 'Введение в WPF'),
+                TitleWidget(title: 'Привязка данных и элементы управления'),
                 SizedBox(height: 15),
                 ListWidget(
                   namel: 'Элементы управления (Controls)',
@@ -76,10 +76,10 @@ class THomeContent extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: 15),
-                TitleWidget(title: 'Привязка данных и MVVM'),
+                TitleWidget(title: 'События и паттерн MVVM'),
                 SizedBox(height: 15),
                 ListWidget(
-                  namel: 'Основы привязки данных',
+                  namel: 'Основы событий и их обработка',
                   items: RMVVM,
                   onItemSelected: (String newValue) {
                     // Handle item selection
@@ -127,6 +127,7 @@ class THomeContent extends StatelessWidget {
                     // Handle item selection
                   },
                 ),
+                const SizedBox(height: 25,),
               ],
             ),
           ),

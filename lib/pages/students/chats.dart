@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:it_lectory_3/core/chats_model.dart'; // Убедитесь, что путь к файлу правильный
 import 'package:it_lectory_3/widgets/appbar_widget.dart';
 import 'package:it_lectory_3/widgets/custom_chat.dart';
+import 'package:it_lectory_3/widgets/custom_chats.dart';
 import 'dart:io';
 import 'package:it_lectory_3/widgets/custom_more_menu.dart';
 import 'package:it_lectory_3/widgets/customt_chat.dart';
@@ -49,7 +50,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
     if (_messagetxt.text.isNotEmpty || imageUrl != null || filePath != null || audioPath != null) {
       Message message = Message(
         id: DateTime.now().millisecondsSinceEpoch,
-        sender: 'Students',
+        sender:  'Student',
         content: _messagetxt.text,
         imageUrl: imageUrl,
         filePath: filePath,
@@ -108,7 +109,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
               itemCount: _messages.length,
               itemBuilder: (context, index) {
                 final message = _messages[index];
-                return CustomMessageWidget(
+                return CustomMessageWidgets(
                   message: message,
 
                 );

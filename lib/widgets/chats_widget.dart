@@ -30,7 +30,7 @@ class ChatCardWidget extends StatelessWidget {
           Container(
             width: 385,
             decoration: BoxDecoration(
-              color: Color.fromRGBO(53, 51, 51, 1),
+              color: Color.fromRGBO(50, 48, 48, 1.0),
               borderRadius: const BorderRadius.all(Radius.circular(15)),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),

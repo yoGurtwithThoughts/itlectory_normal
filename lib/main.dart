@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:it_lectory_3/pages/theme_lection.dart';
 import 'package:it_lectory_3/widgets/chats_page.dart';
 import 'package:it_lectory_3/pages/home_teachers.dart';
 import 'package:it_lectory_3/pages/onboard_1.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         '/profile': (context)=> ProfilePage(),
         '/students': (context)=> StudentsPage(),
         '/thm': (context) =>THomeContent(),
-
+        '/lth':(context)=> ThemeLection(),
       },
       theme: ThemeData(
         primaryColor: Color.fromRGBO(0, 137, 201, 1),

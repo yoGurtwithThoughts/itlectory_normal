@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:it_lectory_3/pages/theme_lection.dart';
 import 'package:it_lectory_3/widgets/style_text.dart';
 
 class ListWidget extends StatelessWidget {
@@ -23,9 +24,7 @@ class ListWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ExpansionTile(
-
         shape: RoundedRectangleBorder(
-
           borderRadius: BorderRadius.circular(15),
           side: BorderSide(color: Colors.transparent),
         ),
@@ -47,9 +46,13 @@ class ListWidget extends StatelessWidget {
         ),
         children: items.map((item) {
           return GestureDetector(
-
             onTap: () {
-              onItemSelected(item);},
+              onItemSelected(item);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) =>  ThemeLection()),
+              );
+            },
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 2.5),
               padding: EdgeInsets.all(10),

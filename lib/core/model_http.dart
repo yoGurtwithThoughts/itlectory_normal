@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 Future<List<dynamic>> fetchData() async {
-  final response = await http.get(Uri.parse('https://metanit.com/sharp/wpf/'));
+  final response = await http.get(Uri.parse('https://metanit.com/sharp/wpf/1.php'));
 
   if (response.statusCode == 200) {
     return json.decode(response.body);

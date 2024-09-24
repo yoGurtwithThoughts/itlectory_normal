@@ -3,7 +3,7 @@ import 'package:it_lectory_3/core/model_http.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:html/parser.dart' as html;
-import 'package:webview_flutter/webview_flutter.dart';
+
 
 class ThemeLection extends StatefulWidget {
    ThemeLection({super.key});
@@ -13,7 +13,7 @@ class ThemeLection extends StatefulWidget {
 }
 
 Future<List<ModelHttp>> fetchData() async {
-  final response = await http.get(Uri.parse('https://metanit.com/sharp/wpf/'));
+  final response = await http.get(Uri.parse('https://metanit.com/sharp/wpf/1.php'));
 
   if (response.statusCode == 200) {
     var document = html.parse(response.body);
@@ -26,8 +26,6 @@ Future<List<ModelHttp>> fetchData() async {
 }
 
 class _ThemeLectionState extends State<ThemeLection> {
-  late final WebViewController controller;
-  bool isLoading = true;
   @override
   void initState() {
     super.initState();

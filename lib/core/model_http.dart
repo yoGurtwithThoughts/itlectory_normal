@@ -3,7 +3,7 @@ import 'package:it_lectory_3/widgets/style_text.dart';
 
 class ModelTheme extends StatefulWidget {
   final String themeTxt;
-  final String imgPath; // Изменяем тип на String для пути к изображению
+  final String imgPath;
 
   ModelTheme({
     required this.themeTxt,

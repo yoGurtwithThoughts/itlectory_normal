@@ -26,7 +26,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Введение в WPF',
                   items: StartWPF,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 25),
@@ -36,7 +35,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Основы XAML',
                   items: XAMLStart,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 25),
@@ -46,7 +44,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Элементы управления (Controls)',
                   items: ControlsElement,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 15),
@@ -56,7 +53,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Рисование и 2D графика',
                   items: Draving,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 15),
@@ -64,7 +60,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Анимация',
                   items: Dravingg,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 15),
@@ -72,7 +67,6 @@ class THomeContent extends StatelessWidget {
                   namel: 'Стили и шаблоны',
                   items: Dravinggg,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
                   },
                 ),
                 SizedBox(height: 15),
@@ -82,7 +76,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Основы событий и их обработка',
                   items: RMVVM,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 SizedBox(height: 15),
@@ -90,7 +84,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Паттерн MVVM',
                   items: RMVVMM,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 SizedBox(height: 15),
@@ -98,7 +92,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Команды и взаимодействие с пользователем',
                   items: RMVVMMM,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 SizedBox(height: 15),
@@ -108,7 +102,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Работа с мультимедиа',
                   items: WPFV,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 SizedBox(height: 15),
@@ -116,7 +110,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Документы и печать',
                   items: WPFVc,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 SizedBox(height: 15),
@@ -124,7 +118,7 @@ class THomeContent extends StatelessWidget {
                   namel: 'Оптимизация и производительность',
                   items: WPFVcc,
                   onItemSelected: (String newValue) {
-                    // Handle item selection
+
                   },
                 ),
                 const SizedBox(height: 25,),

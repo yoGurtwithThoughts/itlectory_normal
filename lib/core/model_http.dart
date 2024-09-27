@@ -1,38 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'package:flutter/services.dart';
+import 'package:it_lectory_3/widgets/style_text.dart';
 
-Future<List<dynamic>> fetchData() async {
-  final response = await http.get(Uri.parse('https://metanit.com/sharp/wpf/1.php'));
 
-  if (response.statusCode == 200) {
-    return json.decode(response.body);
-  } else {
-    throw Exception('Не удалось загрузить данные');
-  }
-}
-
-class ModelHttp {
+class ModelTheme extends StatelessWidget {
   final String themeTxt;
-  final String imgTheme;
+  final AssetImage imgTheme;
 
-  ModelHttp({
+  ModelTheme({
     required this.themeTxt,
     required this.imgTheme,
+    super.key
   });
 
-  factory ModelHttp.fromJson(Map<String, dynamic> json) {
-    return ModelHttp(
-      themeTxt: json['themeTxt'],
-      imgTheme: json['imgTheme'],
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              textAlign: TextAlign.left,
+              maxLines: null,
+              softWrap: true,
+              themeTxt,
+                style: TextStylesMain.alltxt,
+            ),
+            SizedBox(height: 25),
+            Center(child: Image(image: imgTheme)),
+
+          ],
+        ),
+      ),
     );
   }
-
-  Future<List<ModelHttp>> loadJsonData() async {
-    final String response = await rootBundle.loadString('assets/data.json');
-    final List<dynamic> data = json.decode(response);
-
-    return data.map((item) => ModelHttp.fromJson(item)).toList();
-  }
 }
+

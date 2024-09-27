@@ -30,6 +30,12 @@ class TextStylesMain{
     fontWeight: FontWeight.w100,
     color: Color.fromRGBO(0, 85, 150, 1),
   );
+  static const TextStyle buttontxt= TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 25,
+    fontWeight: FontWeight.w500,
+    color: Color.fromRGBO(0, 154, 222, 1),
+  );
   static const TextStyle chattxt= TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 12,

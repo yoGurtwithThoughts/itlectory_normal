@@ -16,15 +16,15 @@ class ModelTheme extends StatefulWidget {
 }
 
 class _ModelThemeState extends State<ModelTheme> {
-  bool _isVisible = false; // Переменная для управления видимостью
+  bool _isVisible = false;
 
   @override
   void initState() {
     super.initState();
-    // Запускаем анимацию через 1 секунду после инициализации
+
     Future.delayed(Duration(seconds: 1), () {
       setState(() {
-        _isVisible = true; // Устанавливаем видимость в true
+        _isVisible = true;
       });
     });
   }
